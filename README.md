@@ -1,2 +1,2 @@
-# SmartContract for PAR Token
-
+# SmartContract
+Smartcontract for the PAR Token
