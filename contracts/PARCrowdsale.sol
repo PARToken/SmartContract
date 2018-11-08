@@ -135,19 +135,6 @@ contract PARCrowdsale is FinalizableCrowdsale, Pausable
 		tmpSold  = _weiAmount.mul( rate ).div( tokenPrice );
 		
 		/*
-		 *		Minimum 10 tokens 
-		 */
-		require( tmpSold >= 10 * 10**18);
-		
-		/*
-		 *		During the stage one I can't sold more then 57500 token
-		 */
-		if( _currentStage() == stage.stage1 )
-		{
-			require( soldToken.add( tmpSold ) <= 57500 * 10**18 );
-		}
-
-		/*
 		 *		Calculate the bonus token for the current stage
 		 */
 		tmpBonus = tmpSold.mul(precision).div(p100).mul( _currentBonus(_currentStage()) ).div(precision);
